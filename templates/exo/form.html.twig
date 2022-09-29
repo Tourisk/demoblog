@@ -3,7 +3,7 @@
 {% block title %}Formulaire!{% endblock %}
 
 {% block body %}
-
+<div class="container border">
 {{ form_start(form, {
   attr: {
     novalidate: 'novalidate'
@@ -38,15 +38,16 @@
   }
 }) }}
 
-  <button type="submit" class="btn btn-primary mt-2">
+<div class="text-center">
+  <button type="submit" class="btn btn-primary mt-2 mb-2">
     {% if editMode %}
       Enregistrer les modifications
     {% else %}
       Ajouter la voiture
     {% endif %}
   </button>
-
+</div>
 {{ form_end(form) }}
 
-
+</div>
 {% endblock %}
