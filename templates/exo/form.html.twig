@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire!{% endblock %}
+
+{% block body %}
+
+{{ form_start(form, {
+  attr: {
+    novalidate: 'novalidate'
+  }
+}) }}
+
+{{ form_row(form.marque, {
+  label: "Marque",
+  attr: {
+    placeholder: "Nom de la marque"
+  }
+}) }}
+
+{{ form_row(form.modele, {
+  label: "Modèle",
+  attr: {
+    placeholder: "Nom du modèle"
+  }
+}) }}
+
+{{ form_row(form.prix, {
+  label: "Prix",
+  attr: {
+    placeholder: "Prix de la voiture"
+  }
+}) }}
+
+{{ form_row(form.description, {
+  label: "Description",
+  attr: {
+    placeholder: "Description du modèle de voiture"
+  }
+}) }}
+
+  <button type="submit" class="btn btn-primary mt-2">
+    {% if editMode %}
+      Enregistrer les modifications
+    {% else %}
+      Ajouter la voiture
+    {% endif %}
+  </button>
+
+{{ form_end(form) }}
+
+
+{% endblock %}
