@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<a class="btn btn-success mt-2" href="{{ path('exo_create')}}">Ajouter une voiture</a>
+<a class="btn btn-success mt-2 col-12" href="{{ path('exo_create')}}">Ajouter une voiture</a>
 <section class="row">
 <table class="table">
   <thead>
@@ -13,6 +13,7 @@
         <th>Modèle</th>
         <th>Description</th>
         <th>Prix</th>
+        <th>Type de voiture</th>
         <th>Editer</th>
         <th>Supprimer</th>
     </tr>
@@ -23,6 +24,8 @@
         <td>{{ voiture.modele|raw }}</td>
         <td>{{ voiture.prix }} €</td>
         <td>{{ voiture.description }}</td>
+        <td>{{ voiture.typevoiture.titre }}</td>
+
         <td>
           <a href="{{ path('exo_edit', {id: voiture.id}) }}" class="btn btn-info">Editer</a>
         </td>
